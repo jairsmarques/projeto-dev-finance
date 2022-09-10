@@ -1,6 +1,10 @@
 /*Global ==============================*/
 :root {
     --color-dark-blue: #363F5F;
+    --green: #49aa26;
+    --light-green: #3dd705;
+    --red: #e92929;
+    --white: #ffffff;
 }
 
 * {
@@ -45,17 +49,48 @@ h2 {
 
 /* Links & Buttons ==================*/
 a {
-    color: #49aa26;
+    color: var(--green);
     text-decoration: none;
 }
 
 a:hover {
-    color: #3dd705;
+    color: var(--light-green);
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: var(--white);
+    background: var(--green);
+    padding: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--light-green);
 }
 
 .button.new {
     display: inline-block;
     margin-bottom: .8rem;
+}
+
+.button.cancel {
+    color: var(--red);
+    border: 2px solid var(--red);
+    border-radius: .25rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.6;
+}
+
+.button.cancel:hover {
+    opacity: 1;
 }
 
 /* Header =====================*/
@@ -66,7 +101,7 @@ header {
 }
 
 header h1 {
-    color: #FFF;
+    color: var(--white);
     font-weight: 100;
 }
 
@@ -76,13 +111,13 @@ header h1 {
 }
 
 #balance h2 {
-    color: #FFF;
+    color: var(--white);
     margin-top: 0;
 }
 
 /* Cards ============================*/
 .card {
-    background: #FFF;
+    background: var(--white);
     padding: 1.5rem 2rem;
     margin-bottom: 2rem;
     border-radius: 0.25rem;
@@ -105,8 +140,8 @@ header h1 {
     margin-top: 1rem;
 }
 .card.total {
-    background: #49AA26;
-    color: #FFF;
+    background: var(--green);
+    color: var(--white);
 }
 
 /* Table ========================*/
@@ -133,7 +168,7 @@ table tbody tr td:last-child {
 }
 
 table th {
-    background: #FFF;
+    background: var(--white);
 
     font-weight: normal;
     padding: 1rem 2rem;
@@ -150,7 +185,7 @@ table tbody tr:hover {
 }
 
 table tbody td {
-    background: white;
+    background: var(--white);
     padding: 1rem 2rem;
 }
 
@@ -163,7 +198,7 @@ td.income {
 }
 
 td.expense {
-    color: #E92929;
+    color: var(--red);
 }
 /* Modal ============================*/
     .modal-overlay {
@@ -181,6 +216,7 @@ td.expense {
 
         opacity: 0;
         visibility: hidden;
+        z-index: 999;
     }
 
     .modal-overlay.active {
@@ -191,7 +227,47 @@ td.expense {
     .modal {
         background: #f0f2f5;
         padding: 2.4rem;
+        position: relative;
+        z-index: 1;
     }
+
+/* Form ============================*/
+#form {
+    max-width: 500px;
+    
+}
+
+#form h2 {
+    margin-top: 0;
+}
+
+input {
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem;
+
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+}
+
+.input-group small {
+    opacity: 0.4;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
+}
 
 /* Footer ============================*/
 
